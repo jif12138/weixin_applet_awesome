@@ -1,0 +1,74 @@
+<!--订单头-->
+<view class="detailtop">
+  <view class="detailtoppic">
+    <image src="/imgs/index/good.jpg"></image>
+  </view>
+  <view class="detailtoptit">i茶咖（济大店）</view>
+  <view class="detailtopstate">订单{{oneorder.state}}  </view>
+</view>
+
+<!--清单-->
+<view class="detaillist">
+  <view class="table">
+    <!--表头-->
+    <view class="tableTitle">
+      <view class="goodname">商品名称</view>
+      <view class="goodtotlaprice">总价 </view>
+      <view class="goodnum">数量 </view>
+      <view class="goodunitprice">单价 </view>
+
+    </view>
+    <!--详情-->
+    <view class="tr" wx:for="{{oneorder.order_detail}}" wx:for-index="j" wx:key="num">
+      <!-- 商品名称 -->
+      <view class="ordername">{{oneorder.order_detail[j].commodities_name}}</view>
+      <!-- 单价 -->
+      <view class="orderprice ">￥{{oneorder.order_detail[j].commodities_unit_price}} </view>
+      <!--数量  -->
+      <view class="ordernum">*{{oneorder.order_detail[j].commodities_num}}</view>
+    </view>
+  </view>
+</view>
+<!-- 优惠活动 -->
+<view class="trbom">
+  <view class="tdbomtit"> 满减活动</view>
+  <view class="tdbomprice">-￥0{{}}</view>
+</view>
+<!-- 总价 -->
+<view class="tabletotal">
+  实付 ￥{{oneorder.order_total_money}}
+</view>
+
+
+
+<!--配送信息-->
+<!-- <view class="detailinfo">
+  <view class="detailtit">
+    配送信息
+  </view>
+  <view class="detailtxt">
+    <view class="detailtit0">收货地址：王海龙 先生</view>
+    <view class="detailtit0">　　　　　15735945124</view>
+    <view class="detailtit0">　　　　　上海市普陀区真北路1549弄45号</view>
+  </view>
+
+  <view class="detailtxt">
+    物流单号：145 455 1221（顺丰快递）
+  </view>
+</view> -->
+
+<!--订单信息-->
+<view class="detailinfo">
+  <view class="detailtit">
+    订单信息
+  </view>
+  <view class="detailtxt">
+    订单号：{{oneorder.order_id}}
+  </view>
+  <view class="detailtxt">
+    支付方式：在线支付
+  </view>
+  <view class="detailtxt">
+    下单时间：{{oneorder.order_time}}
+  </view>
+</view>

@@ -1,0 +1,18 @@
+<!--订单列表-->
+<view class="orderlist">
+  <!-- <view wx:if="{{hasOrder==true}}" >请登陆查看或您没有订单! </view> 
+  <view wx:else > 您的订单如下：</view>  -->
+  <view wx:for="{{orders}}" wx:for-item="oneorder" wx:for-index="i" wx:key="order_id">
+    <view class="orderlitop" data-i="{{i}}" data-id="{{orders[i].order_id}}" bindtap="showDetial">
+      <!-- 订单商品名称 -->
+      <view class="orderlitit1">{{orders[i].order_detail[0].commodities_name}}等</view>
+       <!-- 订单总金额 -->
+      <view class="orderliright"> ¥{{orders[i].order_total_money}}</view>
+      <view class='clear'></view>
+      <!-- 订单时间 -->
+      <view class="orderlitit2">{{orders[i].order_time}}</view>
+      <!-- 订单状态 -->
+      <!-- <view class="orderlibottom"> 订单{{orders[i].state}}></view> -->
+    </view>
+  </view>
+</view>

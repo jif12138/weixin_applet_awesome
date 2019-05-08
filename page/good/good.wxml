@@ -1,0 +1,80 @@
+<!--商品列表-->
+<view class="shop">
+  <view class="goods" wx:for="{{goods}}" wx:for-item="i" wx:for-index="id" wx:key="id">
+    <view class="goodsbox">
+      <image src="{{goods[id].commodities_image}}" data-id="{{id}}" bindtap="showGoodsDetail"></image>
+      <view class="title1">￥{{goods[id].commodities_unit_price}}</view>
+      <view class="title2">{{goods[id].commodities_name}}</view>
+      <view class="title3 addCart" bindtap="tapAddCart" data-id="{{goods[id].commodities_id}}">选择</view>
+    </view>
+  </view>
+</view>
+
+<!--点击后出现 商品详情-->
+<view class="goods-detail" hidden="{{!showGoodsDetail}}">
+  <view class="mask" bindtap="hideGoodsDetail"></view>
+  <view class="goodsdetail">
+    <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="500">
+      <swiper-item>
+        <image src="/imgs/index/gooddetail.jpg" alt="图片"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="/imgs/index/gooddetail.jpg"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="/imgs/index/gooddetail.jpg"></image>
+      </swiper-item>
+    </swiper>
+    <view class="title1">{{goods[id].commodities_name}}</view>
+    <view class="title2">商品描述：{{id}}</view>
+    <view class="title3">推荐指数：
+      <image src="/imgs/shop/star.jpg"></image>
+      <image src="/imgs/shop/star.jpg"></image>
+    </view>
+    <view class="title3"> 收藏人数：{{goods[id].commodities_like}}
+    </view>
+    <view class="title4">
+      <view class="title5">¥{{goods[id].commodities_unit_price}}</view>
+      <view class="title6" bindtap="tapAddCart" data-id="{{goods[id].commodities_id}}">加入购物车</view>
+    </view>
+  </view>
+</view>
+
+<!--购物车-->
+<view class="cart-detail" hidden="{{!showCartDetail||!cart.count}}">
+  <view class="mask" bindtap="hideCartDetail"></view>
+  <view class="list">
+    <view class="carttit">
+      <view class="carttit0">购物车</view>
+      <view class="cartempty" bindtap="cleanCart">
+        <image src="/imgs/index/del.jpg" class="cartimg"></image>清空</view>
+    </view>
+    <view class="carttxt">
+      <view class="carttxt0">满减</view>
+      <view class="carttxt1">订单满100m免运费\配送费</view>
+    </view>
+    <view class="item" wx:for="{{cart.list}}" wx:for-index="id" wx:for-item="num" wx:key="id">
+      <view class="name ellipsis">{{cart.list[id].goodName}}</view>
+      <view class="unit_price">￥{{cart.list[id].goodPrice}}</view>
+
+      <view class="reduce" bindtap="tapReduceCart" data-id="{{cart.list[id].goodID}}">-</view>
+      <view class="num">{{cart.list[id].goodNumber}}</view>
+      <view class="add" bindtap="tapAddCart" data-id="{{cart.list[id].goodID}}">+</view>
+      <!--<view class="total">￥{{goods[id].commodities_unit_price*cart.list[id]}}</view> -->
+    </view>
+  </view>
+</view>
+<view class="cart">
+  <view class="data" bindtap="showCartDetail">
+    <view class="icon">
+      <image src="/imgs/shop/cart.png"></image>
+      <view class="count">{{cart.count}}</view>
+    </view>
+    <view class="total">￥{{cart.total}}</view>
+  </view>
+  <form bindsubmit="submit" report-submit="true">
+    <button class="{{cart.count?'':'disabled'}}" formType="submit" disabled="{{!cart.count}}" bindtap="pay">
+      结算
+    </button>
+  </form>
+</view>

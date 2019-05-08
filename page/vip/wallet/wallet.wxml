@@ -1,0 +1,26 @@
+<!--page/vip/wallet/wallet.wxml-->
+<view class="container">
+  <view class="member">
+    <view>
+      <text class="mymemberpoint">我的积分:</text>
+    </view>
+    <view>
+      <text class="member-points">-{{userMoney}}-</text>
+    </view>
+  </view>
+  <button  bindtap="showInputMoney"class="btn-charge">充值</button>
+
+
+
+
+  <!--点击后出现 充值     bindtap="showInputMoney" -->
+  <view class="inputMoney" hidden="{{!inputMoney}}" >
+    <view class="section">
+      <input type="number" placeholder="请输入充值数量"  bindinput="bindKeyInput" focus="{{focus}}" />
+    </view>
+    <button bindtap="buyPoints">确定</button>
+    <view> 输入的金额：{{inputValue}}</view>
+  </view>
+
+
+</view>

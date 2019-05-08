@@ -1,0 +1,52 @@
+{
+  "debug": true,
+  "pages": [
+    "page/index/index",
+    "page/order/order",
+    "page/index/shop",
+    "page/detail/detail",
+    "page/pay/wechatpay",
+    "page/good/good",
+    "page/Test/test",
+    "page/vip/vip",
+    "page/vip/wallet/wallet"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#3c3c40",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#efefef",
+    "backgroundTextStyle": "dark",
+    "navigationBarTitleText": "i 茶咖",
+    "enablePullDownRefresh": true
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "tabBar": {
+    "backgroundColor": "#202020",
+    "color": "#fff",
+    "list": [
+      {
+        "selectedIconPath": "imgs/icon_03.png",
+        "iconPath": "imgs/icon_03.png",
+        "pagePath": "page/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "imgs/icon_07.png",
+        "iconPath": "imgs/icon_07.png",
+        "pagePath": "page/order/order",
+        "text": "订单"
+      },
+      {
+        "selectedIconPath": "imgs/icon_07.png",
+        "iconPath": "imgs/icon_07.png",
+        "pagePath": "page/vip/vip",
+        "text": "会员中心"
+      }
+    ]
+  }
+}

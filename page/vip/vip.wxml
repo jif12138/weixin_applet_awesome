@@ -1,0 +1,30 @@
+<view class="container">
+  <view class="header">
+    <!--获取头像和昵称-->
+    <view class="userinfo">
+      <button wx:if="{{!hasUserInfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 点击登陆 </button>
+      <!-- <button wx:if="{{!hasUserInfo}}"  bindtap="login"> 点击登陆 </button>  -->
+      <block wx:else>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+  </view>
+  <!-- <view class="section">
+    <view class="line judgement">我的收藏</view>
+  </view> -->
+  <navigator url="../vip/wallet/wallet?title=wallet">
+    <view class="section">
+      <view class="line judgement">我的钱包
+        <text class="tl">积分：￥{{userMoney}}</text>
+      </view>
+    </view>
+  </navigator>
+  <view class="section">
+
+    <view class="line judgement">在线客服 QQ 2412038691
+      <text class="tl">9:00 - 23:00</text>
+    <view class="line judgement">帮助与反馈</view>
+    </view>
+  </view>
+</view>

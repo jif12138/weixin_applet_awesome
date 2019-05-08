@@ -1,0 +1,31 @@
+/* page/vip/wallet/recharge.wxss */
+
+.button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+	padding: 15px 32px;
+    text-align: center;
+	text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	margin: 8px 8px 8px 8px;
+    cursor: pointer;
+}
+
+.button1,.button2,.button3{
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+	border-radius: 8px;
+}
+.button1:hover {
+    background: #f47c20;
+}
+.btn-recharge{
+  line-height: 80rpx;
+  background: #393939;
+  color: #fff;
+  text-align: center;
+  margin-right: 20rpx;
+  border-radius: 5px;
+}

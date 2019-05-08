@@ -1,0 +1,9 @@
+<!--page/Test/test.wxml-->
+<view>
+  <view>
+    <button type="primary" bindtap="getweixinTap" > 获取HTML代码 </button>
+  </view>
+  <view>
+    <textarea value="{{html}}" style="width:95%;" auto-height maxlength="0">   </textarea>
+  </view> 
+</view>

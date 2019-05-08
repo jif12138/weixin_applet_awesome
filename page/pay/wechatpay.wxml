@@ -1,0 +1,72 @@
+<view class="address">
+  <view class="location">
+    <view class="lotit">用户昵称：{{userInfo.nickName}}</view>
+    <view class="lotxt">积分：{{userMoney}}</view>
+  </view>
+  <view class="locationL">
+  </view>
+</view>
+
+<view class="paytype">
+  <view class="section__title">支付方式</view>
+  <picker mode="selector" bindchange="bindPickerChange" value="{{paytypeIndex}}" range="{{paytype}}">
+    <view class="picker">
+      当前选择：{{paytype[paytypeIndex]}}
+      <!-- index:{{paytypeIndex}} -->
+    </view>
+  </picker>
+</view>
+
+<view class="detaillist">
+
+  <view class="table">
+    <view class="tableTitle">
+      <view class="goodname">商品名称</view>
+      <view class="goodunitprice"> 总价</view>
+      <view class="goodnum">数量 </view>
+      <view class="goodtotlaprice"> 单价</view>
+    </view>
+    <view class="item" wx:for="{{cart.list}}" wx:for-index="id" wx:for-item="num" wx:key="id">
+      <!-- 商品名称 -->
+      <view class="name ">{{cart.list[id].goodName}}</view>
+      <!-- 单价 -->
+      <view class="unitprice ">￥{{cart.list[id].goodPrice}} </view>
+      <!--数量  -->
+      <view class="num">*{{cart.list[id].goodNumber}}</view>
+      <!-- 总价 -->
+      <view class="total">￥{{cart.list[id].goodPrice*cart.list[id].goodNumber }}</view>
+    </view>
+
+
+    <view class="trbom">
+      <view class="tdbomtit"> 满减活动</view>
+      <view class="tdbomprice">￥{{cart.discount}}</view>
+    </view>
+  </view>
+  <view class="tabletotal0">
+    <view class="tabletotal1">订单￥{{cart.total}}</view>
+    <view class="tabletotal2">优惠￥{{cart.discount}}</view>
+    <view class="tabletotal3">待支付 ￥{{cart.total-cart.discount}}</view>
+  </view>
+</view>
+
+<!--goodsdetail start-->
+<view class="paypoint " hidden="{{!showPayPointDetail}}">
+  <view class="mask" bindtap="hidePayPointDetail"></view>
+  <view class="paypointdetail">
+
+  </view>
+</view>
+
+<view class="paybom">
+  <view class="paybom1">待支付 ￥{{cart.total-cart.discount}}</view>
+  <view class="paybom2">| 优惠 ￥0{{ }}</view>
+  <button class="paybtn" bindtap='pay'>
+    支付
+  </button>
+</view>
+<view class="beizhu">
+  <view >
+  
+  </view>
+</view>

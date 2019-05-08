@@ -1,0 +1,68 @@
+<!--页头滑动图片 wx:if="{{arr.length>0}}"-->
+<view class="shop-info">
+  <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="500">
+    <swiper-item class="shop-swiper-item">
+      <image src="/imgs/shop/shop-detail1.png" class="shop-info-detail-image"></image>
+    </swiper-item>
+    <swiper-item class="shop-swiper-item">
+      <image src="/imgs/shop/shop-detail2.png" class="shop-info-detail-image"></image>
+    </swiper-item>
+    <swiper-item class="shop-swiper-item">
+      <image src="/imgs/shop/shop-detail1.png" class="shop-info-detail-image"></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+<!--美食列表-->
+<view class='goodlist'>
+  <view class="indexbom">
+    <view class="indexbom-tit">本店美食</view>
+    <view class="indexbomli">
+      <navigator url="../good/good?title=coffee" class="indexbom-url">
+        <!-- <navigator url="../Test/test">   <navigator url="../pay/wechatpay"> -->
+        <image src="/imgs/index/fl_03.jpg" class="indexbom-image"></image>
+      </navigator>
+      <view class="indexbom-goodname">咖啡系列</view>
+    </view>
+
+    <view class="indexbomli">
+      <navigator url="../good/good?title=tea" class="indexbom-url">
+        <image src="/imgs/index/fl_06.jpg" class="indexbom-image"></image>
+      </navigator>
+      <view class="indexbom-goodname">茶饮系列</view>
+    </view>
+
+    <view class="indexbomli">
+      <navigator url="../good/good?title=eat" class="indexbom-url">
+        <image src="/imgs/index/fl_06.jpg" class="indexbom-image"></image>
+      </navigator>
+      <view class="indexbom-goodname">小吃系列</view>
+    </view>
+    <view class="indexbomli">
+      <navigator url="../good/good?title=pencil" class="indexbom-url">
+        <image src="/imgs/index/fl_06.jpg" class="indexbom-image"></image>
+      </navigator>
+      <view class="indexbom-goodname">文具系列</view>
+    </view>
+  </view>
+
+  <!-- <view class="vip-info">
+    <view class="vip-info-title">会员信息</view>
+    <view class="vip-info-detail">欢迎回来{{}}{{}}</view>
+  </view>
+ <view class="detailtop">
+    <view class="detailtoppic">
+      <navigator url="../index/shop">
+        <image src="/imgs/index/good.jpg"></image>
+      </navigator>
+    </view>
+    <view class="detailtoptit">济大公社 - i茶咖
+    </view>
+    <view class="indextop">
+      <view class="indextopSpan">
+        满
+      </view>
+      2017年2月10日前店内商品满50立减10元
+    </view>
+  </view>  -->
+</view>

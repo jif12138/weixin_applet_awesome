@@ -1,0 +1,7 @@
+<!--page/vip/wallet/recharge.wxml-->
+<view bindtap='btn'>
+<button class='button button1'>10</button>
+<button class='button button2'>15</button>
+<button class='button button3'>20</button>
+</view> 
+<button bindtap="recharge" class="btn-recharge">充值</button>
